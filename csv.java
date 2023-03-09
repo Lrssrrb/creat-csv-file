@@ -15,7 +15,7 @@ import org.supercsv.prefs.CsvPreference;
 public class Controller {
 
   @Autowired
-	HttpServletResponse httpServletResponse;
+  HttpServletResponse httpServletResponse;
   
   @GetMapping
   public void genrateCsv() {
