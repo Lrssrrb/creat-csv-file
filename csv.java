@@ -19,23 +19,22 @@ public class Controller {
   
   @GetMapping
   public void genrateCsv() {
-        try {	
-          httpServletResponse.setContentType("text/csv");
-          httpServletResponse.setHeader("Content-Disposition", "attachment; filename=customersFileName.csv");
-          CsvBeanWriter csvBeanWriter = new CsvBeanWriter(httpServletResponse.getWriter(), CsvPreference.STANDARD_PREFERENCE);
+	try {	
+		  httpServletResponse.setContentType("text/csv");
+		  httpServletResponse.setHeader("Content-Disposition", "attachment; filename=customersFileName.csv");
+		  CsvBeanWriter csvBeanWriter = new CsvBeanWriter(httpServletResponse.getWriter(), CsvPreference.STANDARD_PREFERENCE);
 
-          String[] HTMLHeadingElement = {"ONE","TWO","THREE"};
-          String[] classPro = {"one","two","three"};
+		  String[] HTMLHeadingElement = {"ONE","TWO","THREE"};
+		  String[] classPro = {"one","two","three"};
 
-          csvBeanWriter.writeHeader(HTMLHeadingElement);
+		  csvBeanWriter.writeHeader(HTMLHeadingElement);
 
-          ClassCsv zegoOtpRequest = new ClassCsv("1","2L","jkb");
+		  ClassCsv zegoOtpRequest = new ClassCsv("1","2L","jkb");
 
-          csvBeanWriter.write(zegoOtpRequest, classPro);
-          csvBeanWriter.close();
+		  csvBeanWriter.write(zegoOtpRequest, classPro);
+		  csvBeanWriter.close();
 
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-
-    }
+	} catch (IOException e) {
+	  	e.printStackTrace();
+	}
+}
